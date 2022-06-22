@@ -1,10 +1,12 @@
 // initiate express server
 // npm install express --save
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 const persist = require("./persist/memory");
 
+app.use(cors());
 app.use(express.json());
 
 const Todo = require("./persist/todo");
